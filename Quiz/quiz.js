@@ -1,97 +1,131 @@
-// Questions that will be asked
-const Questions = [{
-	q: "What is capital of India?",
-	a: [{ text: "Gandhinagar", isCorrect: false },
-	{ text: "Surat", isCorrect: false },
-	{ text: "Delhi", isCorrect: true },
-	{ text: "Mumbai", isCorrect: false }
-	]
+const questions = [
+  // Objective questions
+  {
+    type: "objective",
+    question: "What is the capital of France?",
+    options: ["Paris", "Berlin", "Rome", "Madrid"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "Which planet is known as the Red Planet?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    answer: 1,
+  },
+  {
+    type: "objective",
+    question: "What is the chemical symbol for gold?",
+    options: ["Au", "Ag", "Fe", "Cu"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "Who painted the Mona Lisa?",
+    options: [
+      "Vincent van Gogh",
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Michelangelo",
+    ],
+    answer: 1,
+  },
+  {
+    type: "objective",
+    question: "Which gas do plants use for photosynthesis?",
+    options: ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+    answer: 0,
+  },
 
-},
-{
-	q: "What is the capital of Thailand?",
-	a: [{ text: "Lampang", isCorrect: false, isSelected: false },
-	{ text: "Phuket", isCorrect: false },
-	{ text: "Ayutthaya", isCorrect: false },
-	{ text: "Bangkok", isCorrect: true }
-	]
+  // Subjective questions
+  {
+    type: "subjective",
+    question: "Explain the concept of gravity.",
+    answer: "Gravity is the force that attracts two masses toward each other.",
+  },
+  {
+    type: "subjective",
+    question: "Describe the process of cellular respiration.",
+    answer:
+      "Cellular respiration is the process by which cells convert glucose and oxygen into energy, carbon dioxide, and water.",
+  },
+  {
+    type: "subjective",
+    question: "Discuss the significance of the Industrial Revolution.",
+    answer:
+      "The Industrial Revolution marked a major shift in manufacturing and transportation, leading to significant social and economic changes.",
+  },
+  {
+    type: "subjective",
+    question:
+      "Explain the theory of natural selection proposed by Charles Darwin.",
+    answer:
+      "Natural selection is the process through which species evolve by individuals with advantageous traits being more likely to survive and reproduce.",
+  },
+  {
+    type: "subjective",
+    question: "What are the key principles of democracy?",
+    answer:
+      "Key principles of democracy include equality, freedom of speech, representation, and the rule of law.",
+  },
+];
+let currentQuestion = 0;
+let score = 0;
 
-},
-{
-	q: "What is the capital of France?",
-	a: [{ text: "Madrid", isCorrect: false },
-	{ text: "Berlin", isCorrect: false },
-	{ text: "Paris", isCorrect: true },
-	{ text: "London", isCorrect: false }
-	]
-},
-{
-	q: "What is the capital of Gujarat",
-	a: [{ text: "Surat", isCorrect: false },
-	{ text: "Vadodara", isCorrect: false },
-	{ text: "Gandhinagar", isCorrect: true },
-	{ text: "Rajkot", isCorrect: false }
-	]
-
+const questionContainer = document.getElementById("question-container");
+const nextButton = document.getElementById("next-btn");
+const scoreContainer = document.getElementById("score-container");
+function showQuestion() {
+  const question = questions[currentQuestion];
+  questionContainer.innerHTML = `
+	  <h2>Question ${currentQuestion + 1}/${questions.length}</h2>
+	  <p>${question.question}</p>
+	  ${
+      question.type === "objective"
+        ? question.options
+            .map(
+              (option, index) => `
+			<label>
+			  <input type="radio" name="option" value="${index}">
+			  ${option}
+			</label><br>
+		  `
+            )
+            .join("")
+        : '<textarea id="subjective-answer" rows="4" cols="50" placeholder="Your answer..."></textarea>'
+    }
+	`;
 }
-
-]
-
-let currQuestion = 0
-let score = 0
-
-function loadQues() {
-	const question = document.getElementById("ques")
-	const opt = document.getElementById("opt")
-
-	question.textContent = Questions[currQuestion].q;
-	opt.innerHTML = ""
-
-	for (let i = 0; i < Questions[currQuestion].a.length; i++) {
-		const choicesdiv = document.createElement("div");
-		const choice = document.createElement("input");
-		const choiceLabel = document.createElement("label");
-
-		choice.type = "radio";
-		choice.name = "answer";
-		choice.value = i;
-
-		choiceLabel.textContent = Questions[currQuestion].a[i].text;
-
-		choicesdiv.appendChild(choice);
-		choicesdiv.appendChild(choiceLabel);
-		opt.appendChild(choicesdiv);
-	}
-}
-
-loadQues();
-
-function loadScore() {
-	const totalScore = document.getElementById("score")
-	totalScore.textContent = `You scored ${score} out of ${Questions.length}`
-}
-
-
-function nextQuestion() {
-	if (currQuestion < Questions.length - 1) {
-		currQuestion++;
-		loadQues();
-	} else {
-		document.getElementById("opt").remove()
-		document.getElementById("ques").remove()
-		document.getElementById("btn").remove()
-		loadScore();
-	}
-}
-
-function checkAns() {
-	const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
-
-	if (Questions[currQuestion].a[selectedAns].isCorrect) {
+function checkAnswer() {
+	const question = questions[currentQuestion];
+	if (question.type === 'objective') {
+	  const selectedOption = document.querySelector('input[name="option"]:checked');
+	  if (!selectedOption) return;
+	  const selectedAnswer = parseInt(selectedOption.value);
+	  if (selectedAnswer === question.answer) {
 		score++;
-		console.log("Correct")
-		nextQuestion();
+	  }
+	  selectedOption.checked = false;
 	} else {
-		nextQuestion();
+	  const subjectiveAnswer = document.getElementById('subjective-answer').value.trim().toLowerCase();
+	  if (subjectiveAnswer === question.answer.toLowerCase()) {
+		score++;
+	  }
 	}
+	currentQuestion++;
+  
+  if (currentQuestion < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
 }
+
+function showScore() {
+  questionContainer.style.display = "none";
+  nextButton.style.display = "none";
+  scoreContainer.textContent = `Your Total Score: ${score}/${questions.length}`;
+  scoreContainer.style.display = "block";
+}
+nextButton.addEventListener("click", checkAnswer);
+
+showQuestion();
