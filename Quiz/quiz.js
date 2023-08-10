@@ -1,23 +1,41 @@
 const questions = [
-  // Objective questions
+  // Objective question
   {
     type: "objective",
     question: "What is the capital of France?",
     options: ["Paris", "Berlin", "Rome", "Madrid"],
     answer: 0,
   },
+   // Subjective question
+   {
+    type: "subjective",
+    question: "Describe the process of cellular respiration.",
+    answer:
+      "Cellular respiration is the process by which cells convert glucose and oxygen into energy, carbon dioxide, and water.",
+  },
+  // Subjective question
   {
+    type: "subjective",
+    question: "Explain the concept of gravity.",
+    answer: "Gravity is the force that attracts two masses toward each other.",
+  },
+   // Objective question
+   {
     type: "objective",
     question: "Which planet is known as the Red Planet?",
     options: ["Venus", "Mars", "Jupiter", "Saturn"],
     answer: 1,
   },
-  {
-    type: "objective",
-    question: "What is the chemical symbol for gold?",
-    options: ["Au", "Ag", "Fe", "Cu"],
-    answer: 0,
+   // Subjective question
+   {
+    type: "subjective",
+    question: "Discuss the significance of the Industrial Revolution.",
+    answer:
+      "The Industrial Revolution marked a major shift in manufacturing and transportation, leading to significant social and economic changes.",
   },
+  
+   
+   // Objective question
   {
     type: "objective",
     question: "Who painted the Mona Lisa?",
@@ -29,6 +47,7 @@ const questions = [
     ],
     answer: 1,
   },
+   // Objective question
   {
     type: "objective",
     question: "Which gas do plants use for photosynthesis?",
@@ -36,24 +55,10 @@ const questions = [
     answer: 0,
   },
 
-  // Subjective questions
-  {
-    type: "subjective",
-    question: "Explain the concept of gravity.",
-    answer: "Gravity is the force that attracts two masses toward each other.",
-  },
-  {
-    type: "subjective",
-    question: "Describe the process of cellular respiration.",
-    answer:
-      "Cellular respiration is the process by which cells convert glucose and oxygen into energy, carbon dioxide, and water.",
-  },
-  {
-    type: "subjective",
-    question: "Discuss the significance of the Industrial Revolution.",
-    answer:
-      "The Industrial Revolution marked a major shift in manufacturing and transportation, leading to significant social and economic changes.",
-  },
+
+   
+   
+    // Subjective question
   {
     type: "subjective",
     question:
@@ -61,6 +66,14 @@ const questions = [
     answer:
       "Natural selection is the process through which species evolve by individuals with advantageous traits being more likely to survive and reproduce.",
   },
+  // Objective question
+  {
+    type: "objective",
+    question: "What is the chemical symbol for gold?",
+    options: ["Au", "Ag", "Fe", "Cu"],
+    answer: 0,
+  },
+    // Subjective question
   {
     type: "subjective",
     question: "What are the key principles of democracy?",
