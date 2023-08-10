@@ -18,6 +18,14 @@ const Questions = [{
 
 },
 {
+	q: "What is the capital of France?",
+	a: [{ text: "Madrid", isCorrect: false },
+	{ text: "Berlin", isCorrect: false },
+	{ text: "Paris", isCorrect: true },
+	{ text: "London", isCorrect: false }
+	]
+},
+{
 	q: "What is the capital of Gujarat",
 	a: [{ text: "Surat", isCorrect: false },
 	{ text: "Vadodara", isCorrect: false },
