@@ -340,7 +340,10 @@ const questions = [
 ];
 let currentQuestion = 0;
 let score = 0;
+let timeLeft = 600; // 10 minutes in seconds
 
+
+const timer = document.getElementById("timer");
 const questionContainer = document.getElementById("question-container");
 const nextButton = document.getElementById("next-btn");
 const scoreContainer = document.getElementById("score-container");
@@ -365,6 +368,25 @@ function showQuestion() {
     }
 	`;
 }
+
+function updateTimer() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  timer.textContent = `Time Remaining: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function startTimer() {
+  const timerInterval = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;
+      updateTimer();
+    } else {
+      clearInterval(timerInterval);
+      showScore();
+    }
+  }, 1000);
+}
+
 function checkAnswer() {
 	const question = questions[currentQuestion];
 	if (question.type === 'objective') {
@@ -398,4 +420,6 @@ function showScore() {
 }
 nextButton.addEventListener("click", checkAnswer);
 
+
 showQuestion();
+startTimer();
