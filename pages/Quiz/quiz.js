@@ -2,6 +2,73 @@ const questions = [
   // Objective questions
   {
     type: "objective",
+    question: "What is the official language of Nigeria?",
+    options: ["Yoruba", "Hausa", "Igbo", "English"],
+    answer: 3,
+  },
+  {
+    type: "objective",
+    question: "Which sector is the largest contributor to Nigeria's GDP?",
+    options: ["Agriculture", "Oil and Gas", "Manufacturing", "Information Technology"],
+    answer: 1,
+  },
+  {
+    type: "objective",
+    question: "Which Nigerian scientist was awarded the Nobel Prize in Medicine for groundbreaking research in 2023?",
+    options: ["Ifeoma Njoku", "Emeka Nwankwo", "Amina Jibril", "Ifeoluwa Ogunlesi"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "Who is the current President of Nigeria as of July 2023?",
+    options: [
+      "Goodluck Jonathan",
+      "Muhammadu Buhari",
+      "Atiku Abubakar",
+      "Tinubu Bola",
+    ],
+    answer: 3,
+  },
+  {
+    type: "objective",
+    question: "Nigeria celebrates its independence day on which date?",
+    options: ["January 1st", "July 4th", "October 1st", "December 25th"],
+    answer: 2,
+  },
+// Subjective questions
+  {
+    type: "subjective",
+    question: "Which is the most populated country in the world?",
+    answer: "China",
+  },
+  {
+    type: "subjective",
+    question: "What does the acronym ECOMOG mean?",
+    answer:
+      "Economic Community Monitoring Group",
+  },
+  {
+    type: "subjective",
+    question: "What country does Nigeria share borders with the West?",
+    answer:
+      "Republic of Benin",
+  },
+  {
+    type: "subjective",
+    question:
+      "What is the capital city of Nigeria?",
+    answer:
+      "Natural selection is the process through which species evolve by individuals with advantageous traits being more likely to survive and reproduce.",
+  },
+  {
+    type: "subjective",
+    question: "What are the key principles of democracy?",
+    answer:
+      "Abuja",
+  },
+  // Objective questions
+  {
+    type: "objective",
     question: "What is the capital of France?",
     options: ["Paris", "Berlin", "Rome", "Madrid"],
     answer: 0,
@@ -14,20 +81,20 @@ const questions = [
   },
   {
     type: "objective",
-    question: "What is the chemical symbol for gold?",
-    options: ["Au", "Ag", "Fe", "Cu"],
-    answer: 0,
+    question: "Which Nigerian author is known for writing the novel THINGS FALL APART?",
+    options: ["Wole Soyinka", "Chinua Achebe", "Chimamanda Ngozi Adichie", "Ben Okri"],
+    answer: 1,
   },
   {
     type: "objective",
-    question: "Who painted the Mona Lisa?",
+    question: "Which Nigerian musician won the Grammy Award for Best Global Music Album in 2023?",
     options: [
-      "Vincent van Gogh",
-      "Leonardo da Vinci",
-      "Pablo Picasso",
-      "Michelangelo",
+      "Burna Boy",
+      "Wizkid",
+      "Davido",
+      "Tiwa Savage",
     ],
-    answer: 1,
+    answer: 0,
   },
   {
     type: "objective",
@@ -36,30 +103,166 @@ const questions = [
     answer: 0,
   },
 
-  // Subjective questions
+   // Subjective questions
   {
     type: "subjective",
-    question: "Explain the concept of gravity.",
-    answer: "Gravity is the force that attracts two masses toward each other.",
+    question: "What is the name of Nigeria's national currency?",
+    answer: "Naira",
   },
   {
     type: "subjective",
-    question: "Describe the process of cellular respiration.",
+    question: "Who was the first Nigerian female psychiatrist?",
     answer:
-      "Cellular respiration is the process by which cells convert glucose and oxygen into energy, carbon dioxide, and water.",
+      "Dr. Bertha Johnson",
   },
   {
     type: "subjective",
-    question: "Discuss the significance of the Industrial Revolution.",
+    question: "Who is the chief of justices of Nigeria as of 2023?.",
     answer:
-      "The Industrial Revolution marked a major shift in manufacturing and transportation, leading to significant social and economic changes.",
+      "Ibrahim Tanko Muhammad",
   },
   {
     type: "subjective",
     question:
-      "Explain the theory of natural selection proposed by Charles Darwin.",
+      "How many ethnic groups do we have in Nigeria?",
     answer:
-      "Natural selection is the process through which species evolve by individuals with advantageous traits being more likely to survive and reproduce.",
+      "250 ethnic groups",
+  },
+  {
+    type: "subjective",
+    question: "Nigeria’s Inspector General of Police as of January 2023 is?",
+    answer:
+      "Adamu Mohammed",
+  },
+  // Objective questions
+   {
+    type: "objective",
+    question: "In 2023, Nigeria hosted which major international conference focused on climate change?",
+    options: ["COP26", "G20 Summit", "World Economic Forum", "United Nations General Assembly"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "Which infrastructure project aims to connect Lagos to Calabar via a modern railway network?",
+    options: ["Lagos-Ibadan Rail", "Abuja Light Rail", "Lagos-Kano Rail", "Coastal Rail Project"],
+    answer: 3,
+  },
+  {
+    type: "objective",
+    question: "In 2023, Nigeria marked the centenary of which historic event?",
+    options: ["Amalgamation of Northern and Southern Nigeria", "Independence from British colonial rule", "First oil discovery in Oloibiri", "Formation of the Nigerian Army"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "What is the name of the Nigerian initiative launched in 2023 to promote digital literacy and technology adoption?",
+    options: [
+      "TechNigeria",
+      "Digital Revolution NG",
+      "NaijaTech Initiative",
+      "Digital Nigeria Project",
+    ],
+    answer: 1,
+  },
+  {
+    type: "objective",
+    question: "In 2023, Nigeria experienced an economic downturn primarily due to fluctuations in which global commodity market?",
+    options: ["Coffee", "Gold", "Crude oil", "Wheat"],
+    answer: 2,
+  },
+
+  // Subjective questions
+  {
+    type: "subjective",
+    question: "Which Nigerian state is known as the CENTRE OF EXELLENCE and is a major economic hub?",
+    answer: "Lagos",
+  },
+  {
+    type: "subjective",
+    question: "Who is the first Nigerian astronaut to participate in a space mission in 2023?",
+    answer:
+      "Wale Adeyemo",
+  },
+  {
+    type: "subjective",
+    question: "Which Nigerian actress won the BEST ACTRESS AWARD at the 2023 Africa Movie Academy Awards (AMAA)?",
+    answer:
+      "Genevieve Nnaji",
+  },
+  {
+    type: "subjective",
+    question:
+      "Which renewable energy source is Nigeria actively promoting to reduce dependence on fossil fuels?",
+    answer:
+      "Solar power",
+  },
+  {
+    type: "subjective",
+    question: "Who was the world’s first writer of the English Dictionary?",
+    answer:
+      "Samuel Johnson",
+  },
+  // Objective questions
+  {
+    type: "objective",
+    question: "What is the significance of the EKO ATLANTIC project in Lagos?",
+    options: ["Largest shopping mall in Africa", "Advanced medical research facility", "New financial district", "Space exploration center"],
+    answer: 2,
+  },
+  {
+    type: "objective",
+    question: "Which Nigerian NGO is renowned for its work in promoting girls' education and gender equality?",
+    options: ["Save Our Girls Foundation", "Girl Power Initiative", "Women Empowerment Nigeria", "Educate the Girl Child"],
+    answer: 1,
+  },
+  {
+    type: "objective",
+    question: "Which is the second-largest continent in the world?",
+    options: ["Africa", "Asia", "China", "Europue"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "The hottest region in the world is called?",
+    options: [
+      "Vincent van Gogh",
+      "The Sahara Desert",
+      "Pablo Picasso",
+      "Michelangelo",
+    ],
+    answer: 1,
+  },
+  {
+    type: "objective",
+    question: "Who is the current chairman of ECOWAS?",
+    options: ["Enoch Adeboye", "Muhama don Issoufou", "Victor Osimhen", "Abdulrahman Idris"],
+    answer: 1,
+  },
+
+  // Subjective questions
+  {
+    type: "subjective",
+    question: "Who is Nigeria’s current speaker of the House of Representatives?",
+    answer: "Tajudeen Abbas",
+  },
+  {
+    type: "subjective",
+    question: "Who is Nigeria’s Minister of Power?",
+    answer:
+      "Abubakar Aliyu",
+  },
+  {
+    type: "subjective",
+    question: "Who was the first President of Nigeria?",
+    answer:
+      " Dr. Nnamdi Azikiwe",
+  },
+  {
+    type: "subjective",
+    question:
+      "What Blue in the Nigerian Police flag represents?",
+    answer:
+      "Love, loyalty, and unity",
   },
   {
     type: "subjective",
@@ -67,6 +270,73 @@ const questions = [
     answer:
       "Key principles of democracy include equality, freedom of speech, representation, and the rule of law.",
   },
+   // Objective questions
+   {
+    type: "objective",
+    question: "The first awarded Archbishop in Africa?",
+    options: ["Benson Andrew Idahosa", "Joseph Idahosa", "Idahosa Joseph", "Madrid Andrew Idahosa"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "The separation of powers simply means.",
+    options: ["Checks and Balances", "Separate and Balances", "Balances and Balances", "Checks and Separate"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "What does the acronym ICAO stand for?",
+    options: ["Au", "Ag", "Fe", "Cu"],
+    answer: 0,
+  },
+  {
+    type: "objective",
+    question: "Who painted the Mona Lisa?",
+    options: [
+      "International Civic Aviation Organisation",
+      "International Civil Avail Organisation",
+      "Inter Civil Aviation Organisation",
+      " International Civil Aviation Organisation",
+    ],
+    answer: 3,
+  },
+  {
+    type: "objective",
+    question: "Which is the highest mountain in Africa?",
+    options: ["Mount Kilimanjaro", "Mount Everest", "Mount milia", "Mount zion"],
+    answer: 0,
+  },
+ // Subjective questions
+ {
+  type: "subjective",
+  question: "The first woman to become a governor in Nigeria is?",
+  answer: "Mrs. Virginia Etiaba",
+},
+{
+  type: "subjective",
+  question: " When did Nigeria break diplomatic relations with Israel?",
+  answer:
+    "1972",
+},
+{
+  type: "subjective",
+  question: "Which state has the highest percentage of contribution to oil revenue in Nigeria?",
+  answer:
+    "Delta State",
+},
+{
+  type: "subjective",
+  question:
+    "Who was Nigeria’s First Military Head of State?",
+  answer:
+    "General Yakubu Gowon",
+},
+{
+  type: "subjective",
+  question: "What is the motto of Nigeria?",
+  answer:
+    "Unity and Faith, Peace and Progress",
+},
 ];
 let currentQuestion = 0;
 let score = 0;
