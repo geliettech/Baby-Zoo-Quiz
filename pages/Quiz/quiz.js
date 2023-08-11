@@ -9,13 +9,24 @@ const questions = [
   {
     type: "objective",
     question: "Which sector is the largest contributor to Nigeria's GDP?",
-    options: ["Agriculture", "Oil and Gas", "Manufacturing", "Information Technology"],
+    options: [
+      "Agriculture",
+      "Oil and Gas",
+      "Manufacturing",
+      "Information Technology",
+    ],
     answer: 1,
   },
   {
     type: "objective",
-    question: "Which Nigerian scientist was awarded the Nobel Prize in Medicine for groundbreaking research in 2023?",
-    options: ["Ifeoma Njoku", "Emeka Nwankwo", "Amina Jibril", "Ifeoluwa Ogunlesi"],
+    question:
+      "Which Nigerian scientist was awarded the Nobel Prize in Medicine for groundbreaking research in 2023?",
+    options: [
+      "Ifeoma Njoku",
+      "Emeka Nwankwo",
+      "Amina Jibril",
+      "Ifeoluwa Ogunlesi",
+    ],
     answer: 0,
   },
   {
@@ -35,7 +46,7 @@ const questions = [
     options: ["January 1st", "July 4th", "October 1st", "December 25th"],
     answer: 2,
   },
-// Subjective questions
+  // Subjective questions
   {
     type: "subjective",
     question: "Which is the most populated country in the world?",
@@ -44,27 +55,23 @@ const questions = [
   {
     type: "subjective",
     question: "What does the acronym ECOMOG mean?",
-    answer:
-      "Economic Community Monitoring Group",
+    answer: "Economic Community Monitoring Group",
   },
   {
     type: "subjective",
     question: "What country does Nigeria share borders with the West?",
-    answer:
-      "Republic of Benin",
+    answer: "Republic of Benin",
   },
   {
     type: "subjective",
-    question:
-      "What is the capital city of Nigeria?",
+    question: "What is the capital city of Nigeria?",
     answer:
       "Natural selection is the process through which species evolve by individuals with advantageous traits being more likely to survive and reproduce.",
   },
   {
     type: "subjective",
     question: "What are the key principles of democracy?",
-    answer:
-      "Abuja",
+    answer: "Abuja",
   },
   // Objective questions
   {
@@ -81,19 +88,21 @@ const questions = [
   },
   {
     type: "objective",
-    question: "Which Nigerian author is known for writing the novel THINGS FALL APART?",
-    options: ["Wole Soyinka", "Chinua Achebe", "Chimamanda Ngozi Adichie", "Ben Okri"],
+    question:
+      "Which Nigerian author is known for writing the novel THINGS FALL APART?",
+    options: [
+      "Wole Soyinka",
+      "Chinua Achebe",
+      "Chimamanda Ngozi Adichie",
+      "Ben Okri",
+    ],
     answer: 1,
   },
   {
     type: "objective",
-    question: "Which Nigerian musician won the Grammy Award for Best Global Music Album in 2023?",
-    options: [
-      "Burna Boy",
-      "Wizkid",
-      "Davido",
-      "Tiwa Savage",
-    ],
+    question:
+      "Which Nigerian musician won the Grammy Award for Best Global Music Album in 2023?",
+    options: ["Burna Boy", "Wizkid", "Davido", "Tiwa Savage"],
     answer: 0,
   },
   {
@@ -103,7 +112,7 @@ const questions = [
     answer: 0,
   },
 
-   // Subjective questions
+  // Subjective questions
   {
     type: "subjective",
     question: "What is the name of Nigeria's national currency?",
@@ -112,50 +121,63 @@ const questions = [
   {
     type: "subjective",
     question: "Who was the first Nigerian female psychiatrist?",
-    answer:
-      "Dr. Bertha Johnson",
+    answer: "Dr. Bertha Johnson",
   },
   {
     type: "subjective",
     question: "Who is the chief of justices of Nigeria as of 2023?.",
-    answer:
-      "Ibrahim Tanko Muhammad",
+    answer: "Ibrahim Tanko Muhammad",
   },
   {
     type: "subjective",
-    question:
-      "How many ethnic groups do we have in Nigeria?",
-    answer:
-      "250 ethnic groups",
+    question: "How many ethnic groups do we have in Nigeria?",
+    answer: "250 ethnic groups",
   },
   {
     type: "subjective",
     question: "Nigeria’s Inspector General of Police as of January 2023 is?",
-    answer:
-      "Adamu Mohammed",
+    answer: "Adamu Mohammed",
   },
   // Objective questions
-   {
+  {
     type: "objective",
-    question: "In 2023, Nigeria hosted which major international conference focused on climate change?",
-    options: ["COP26", "G20 Summit", "World Economic Forum", "United Nations General Assembly"],
+    question:
+      "In 2023, Nigeria hosted which major international conference focused on climate change?",
+    options: [
+      "COP26",
+      "G20 Summit",
+      "World Economic Forum",
+      "United Nations General Assembly",
+    ],
     answer: 0,
   },
   {
     type: "objective",
-    question: "Which infrastructure project aims to connect Lagos to Calabar via a modern railway network?",
-    options: ["Lagos-Ibadan Rail", "Abuja Light Rail", "Lagos-Kano Rail", "Coastal Rail Project"],
+    question:
+      "Which infrastructure project aims to connect Lagos to Calabar via a modern railway network?",
+    options: [
+      "Lagos-Ibadan Rail",
+      "Abuja Light Rail",
+      "Lagos-Kano Rail",
+      "Coastal Rail Project",
+    ],
     answer: 3,
   },
   {
     type: "objective",
     question: "In 2023, Nigeria marked the centenary of which historic event?",
-    options: ["Amalgamation of Northern and Southern Nigeria", "Independence from British colonial rule", "First oil discovery in Oloibiri", "Formation of the Nigerian Army"],
+    options: [
+      "Amalgamation of Northern and Southern Nigeria",
+      "Independence from British colonial rule",
+      "First oil discovery in Oloibiri",
+      "Formation of the Nigerian Army",
+    ],
     answer: 0,
   },
   {
     type: "objective",
-    question: "What is the name of the Nigerian initiative launched in 2023 to promote digital literacy and technology adoption?",
+    question:
+      "What is the name of the Nigerian initiative launched in 2023 to promote digital literacy and technology adoption?",
     options: [
       "TechNigeria",
       "Digital Revolution NG",
@@ -166,7 +188,8 @@ const questions = [
   },
   {
     type: "objective",
-    question: "In 2023, Nigeria experienced an economic downturn primarily due to fluctuations in which global commodity market?",
+    question:
+      "In 2023, Nigeria experienced an economic downturn primarily due to fluctuations in which global commodity market?",
     options: ["Coffee", "Gold", "Crude oil", "Wheat"],
     answer: 2,
   },
@@ -174,45 +197,55 @@ const questions = [
   // Subjective questions
   {
     type: "subjective",
-    question: "Which Nigerian state is known as the CENTRE OF EXELLENCE and is a major economic hub?",
+    question:
+      "Which Nigerian state is known as the CENTRE OF EXELLENCE and is a major economic hub?",
     answer: "Lagos",
   },
   {
     type: "subjective",
-    question: "Who is the first Nigerian astronaut to participate in a space mission in 2023?",
-    answer:
-      "Wale Adeyemo",
+    question:
+      "Who is the first Nigerian astronaut to participate in a space mission in 2023?",
+    answer: "Wale Adeyemo",
   },
   {
     type: "subjective",
-    question: "Which Nigerian actress won the BEST ACTRESS AWARD at the 2023 Africa Movie Academy Awards (AMAA)?",
-    answer:
-      "Genevieve Nnaji",
+    question:
+      "Which Nigerian actress won the BEST ACTRESS AWARD at the 2023 Africa Movie Academy Awards (AMAA)?",
+    answer: "Genevieve Nnaji",
   },
   {
     type: "subjective",
     question:
       "Which renewable energy source is Nigeria actively promoting to reduce dependence on fossil fuels?",
-    answer:
-      "Solar power",
+    answer: "Solar power",
   },
   {
     type: "subjective",
     question: "Who was the world’s first writer of the English Dictionary?",
-    answer:
-      "Samuel Johnson",
+    answer: "Samuel Johnson",
   },
   // Objective questions
   {
     type: "objective",
     question: "What is the significance of the EKO ATLANTIC project in Lagos?",
-    options: ["Largest shopping mall in Africa", "Advanced medical research facility", "New financial district", "Space exploration center"],
+    options: [
+      "Largest shopping mall in Africa",
+      "Advanced medical research facility",
+      "New financial district",
+      "Space exploration center",
+    ],
     answer: 2,
   },
   {
     type: "objective",
-    question: "Which Nigerian NGO is renowned for its work in promoting girls' education and gender equality?",
-    options: ["Save Our Girls Foundation", "Girl Power Initiative", "Women Empowerment Nigeria", "Educate the Girl Child"],
+    question:
+      "Which Nigerian NGO is renowned for its work in promoting girls' education and gender equality?",
+    options: [
+      "Save Our Girls Foundation",
+      "Girl Power Initiative",
+      "Women Empowerment Nigeria",
+      "Educate the Girl Child",
+    ],
     answer: 1,
   },
   {
@@ -235,34 +268,36 @@ const questions = [
   {
     type: "objective",
     question: "Who is the current chairman of ECOWAS?",
-    options: ["Enoch Adeboye", "Muhama don Issoufou", "Victor Osimhen", "Abdulrahman Idris"],
+    options: [
+      "Enoch Adeboye",
+      "Muhama don Issoufou",
+      "Victor Osimhen",
+      "Abdulrahman Idris",
+    ],
     answer: 1,
   },
 
   // Subjective questions
   {
     type: "subjective",
-    question: "Who is Nigeria’s current speaker of the House of Representatives?",
+    question:
+      "Who is Nigeria’s current speaker of the House of Representatives?",
     answer: "Tajudeen Abbas",
   },
   {
     type: "subjective",
     question: "Who is Nigeria’s Minister of Power?",
-    answer:
-      "Abubakar Aliyu",
+    answer: "Abubakar Aliyu",
   },
   {
     type: "subjective",
     question: "Who was the first President of Nigeria?",
-    answer:
-      " Dr. Nnamdi Azikiwe",
+    answer: " Dr. Nnamdi Azikiwe",
   },
   {
     type: "subjective",
-    question:
-      "What Blue in the Nigerian Police flag represents?",
-    answer:
-      "Love, loyalty, and unity",
+    question: "What Blue in the Nigerian Police flag represents?",
+    answer: "Love, loyalty, and unity",
   },
   {
     type: "subjective",
@@ -270,17 +305,27 @@ const questions = [
     answer:
       "Key principles of democracy include equality, freedom of speech, representation, and the rule of law.",
   },
-   // Objective questions
-   {
+  // Objective questions
+  {
     type: "objective",
     question: "The first awarded Archbishop in Africa?",
-    options: ["Benson Andrew Idahosa", "Joseph Idahosa", "Idahosa Joseph", "Madrid Andrew Idahosa"],
+    options: [
+      "Benson Andrew Idahosa",
+      "Joseph Idahosa",
+      "Idahosa Joseph",
+      "Madrid Andrew Idahosa",
+    ],
     answer: 0,
   },
   {
     type: "objective",
     question: "The separation of powers simply means.",
-    options: ["Checks and Balances", "Separate and Balances", "Balances and Balances", "Checks and Separate"],
+    options: [
+      "Checks and Balances",
+      "Separate and Balances",
+      "Balances and Balances",
+      "Checks and Separate",
+    ],
     answer: 0,
   },
   {
@@ -303,45 +348,45 @@ const questions = [
   {
     type: "objective",
     question: "Which is the highest mountain in Africa?",
-    options: ["Mount Kilimanjaro", "Mount Everest", "Mount milia", "Mount zion"],
+    options: [
+      "Mount Kilimanjaro",
+      "Mount Everest",
+      "Mount milia",
+      "Mount zion",
+    ],
     answer: 0,
   },
- // Subjective questions
- {
-  type: "subjective",
-  question: "The first woman to become a governor in Nigeria is?",
-  answer: "Mrs. Virginia Etiaba",
-},
-{
-  type: "subjective",
-  question: " When did Nigeria break diplomatic relations with Israel?",
-  answer:
-    "1972",
-},
-{
-  type: "subjective",
-  question: "Which state has the highest percentage of contribution to oil revenue in Nigeria?",
-  answer:
-    "Delta State",
-},
-{
-  type: "subjective",
-  question:
-    "Who was Nigeria’s First Military Head of State?",
-  answer:
-    "General Yakubu Gowon",
-},
-{
-  type: "subjective",
-  question: "What is the motto of Nigeria?",
-  answer:
-    "Unity and Faith, Peace and Progress",
-},
+  // Subjective questions
+  {
+    type: "subjective",
+    question: "The first woman to become a governor in Nigeria is?",
+    answer: "Mrs. Virginia Etiaba",
+  },
+  {
+    type: "subjective",
+    question: " When did Nigeria break diplomatic relations with Israel?",
+    answer: "1972",
+  },
+  {
+    type: "subjective",
+    question:
+      "Which state has the highest percentage of contribution to oil revenue in Nigeria?",
+    answer: "Delta State",
+  },
+  {
+    type: "subjective",
+    question: "Who was Nigeria’s First Military Head of State?",
+    answer: "General Yakubu Gowon",
+  },
+  {
+    type: "subjective",
+    question: "What is the motto of Nigeria?",
+    answer: "Unity and Faith, Peace and Progress",
+  },
 ];
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 600; // 10 minutes in seconds
-
 
 const timer = document.getElementById("timer");
 const questionContainer = document.getElementById("question-container");
@@ -372,7 +417,10 @@ function showQuestion() {
 function updateTimer() {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
-  timer.textContent = `Time Remaining: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  timer.textContent = `Time Remaining: ${String(minutes).padStart(
+    2,
+    "0"
+  )}:${String(seconds).padStart(2, "0")}`;
 }
 
 function startTimer() {
@@ -388,23 +436,28 @@ function startTimer() {
 }
 
 function checkAnswer() {
-	const question = questions[currentQuestion];
-	if (question.type === 'objective') {
-	  const selectedOption = document.querySelector('input[name="option"]:checked');
-	  if (!selectedOption) return;
-	  const selectedAnswer = parseInt(selectedOption.value);
-	  if (selectedAnswer === question.answer) {
-		score++;
-	  }
-	  selectedOption.checked = false;
-	} else {
-	  const subjectiveAnswer = document.getElementById('subjective-answer').value.trim().toLowerCase();
-	  if (subjectiveAnswer === question.answer.toLowerCase()) {
-		score++;
-	  }
-	}
-	currentQuestion++;
-  
+  const question = questions[currentQuestion];
+  if (question.type === "objective") {
+    const selectedOption = document.querySelector(
+      'input[name="option"]:checked'
+    );
+    if (!selectedOption) return;
+    const selectedAnswer = parseInt(selectedOption.value);
+    if (selectedAnswer === question.answer) {
+      score++;
+    }
+    selectedOption.checked = false;
+  } else {
+    const subjectiveAnswer = document
+      .getElementById("subjective-answer")
+      .value.trim()
+      .toLowerCase();
+    if (subjectiveAnswer === question.answer.toLowerCase()) {
+      score++;
+    }
+  }
+  currentQuestion++;
+
   if (currentQuestion < questions.length) {
     showQuestion();
   } else {
@@ -419,7 +472,6 @@ function showScore() {
   scoreContainer.style.display = "block";
 }
 nextButton.addEventListener("click", checkAnswer);
-
 
 showQuestion();
 startTimer();

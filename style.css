@@ -28,35 +28,27 @@ main {
   margin: 0 auto;
   padding: 12px 0;
 }
-.logo-welcomeWriteUp-btn-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: 100%;
-}
-
 .logo h1 {
   font-weight: 600;
-  font-size: 64px;
+  font-size: 62px;
   color: #3498db;
-}
-.welcomeWriteUp-btn-wrapper {
-  width: 58%;
   text-align: right;
 }
+.welcomeWriteUp-btn-wrapper {
+  text-align: center;
+}
 .welcome-writeUp {
-  margin-top: 22%;
+  margin-top: 16%;
 }
 .welcome-writeUp h2 {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 38px;
   color: #3498db;
 }
 .welcome-writeUp p {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.5rem;
-  padding-left: 44px;
   margin-top: 8px;
 }
 
@@ -71,18 +63,38 @@ main {
 .main-container button a {
   color: #fff;
   text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
 }
 .main-container button a:hover {
   text-decoration: underline;
 }
-@media (max-width: 1000px) {
-  .welcomeWriteUp-btn-wrapper {
-    width: 100%;
-    text-align: center;
+@media (max-width: 864px) {
+  .logo h1 {
+    font-size: 38px;
+  }
+  .welcome-writeUp h2 {
+    font-size: 32px;
   }
   .welcome-writeUp p {
-    padding-left: 0;
+    font-size: 20px;
+  }
+  .main-container button a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 362px) {
+  .logo h1 {
+    font-size: 32px;
+  }
+  .welcome-writeUp h2 {
+    font-size: 28px;
+  }
+  .welcome-writeUp p {
+    font-size: 18px;
+  }
+  .main-container button a {
+    font-size: 16px;
   }
 }
