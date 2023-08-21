@@ -1,4 +1,7 @@
-// Array containing question objects
+// Array containing 50 question objects (subjective and objective)
+// Each question object have properties: type, question, options (for objective), and answer
+// Example for an objective question: { type: 'objective', question: 'Question text?', options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'], answer: 0 }
+// Example for a subjective question: { type: 'subjective', question: 'Subjective question text', answer: 'Expected answer' }
 const questions = [
   // Objective questions
   {
@@ -389,38 +392,37 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 600; // 10 minutes in seconds
+let timerInterval;
 
 // Get elements from the HTML
 const timer = document.getElementById("timer");
 const questionContainer = document.getElementById("question-container");
 const prevButton = document.getElementById("prev-btn");
 const nextButton = document.getElementById("next-btn");
+const submitButton = document.getElementById("submit-btn");
 const scoreContainer = document.getElementById("score-container");
 
 // Function to display the current question
 function showQuestion() {
   const question = questions[currentQuestion];
   questionContainer.innerHTML = `
-	  <h2>Question ${currentQuestion + 1}/${questions.length}</h2>
-	  <p>${question.question}</p>
-	  ${
+    <h2>Question ${currentQuestion + 1}/${questions.length}</h2>
+    <p>${question.question}</p>
+    ${
       question.type === "objective"
         ? question.options
             .map(
               (option, index) => `
-			<label>
-			  <input type="radio" name="option" value="${index}">
-			  ${option}
-			</label><br>
-		  `
+          <label>
+            <input type="radio" name="option" value="${index}">
+            ${option}
+          </label><br>
+        `
             )
             .join("")
         : '<textarea id="subjective-answer" rows="4" cols="50" placeholder="Your answer..."></textarea>'
     }
-	`;
-  // Enable/disable navigation buttons based on question index
-  prevButton.disabled = currentQuestion === 0;
-  nextButton.disabled = currentQuestion === questions.length - 1;
+  `;
 }
 
 // Function to update the timer display
@@ -435,7 +437,7 @@ function updateTimer() {
 
 // Function to start the timer countdown
 function startTimer() {
-  const timerInterval = setInterval(() => {
+  timerInterval = setInterval(() => {
     if (timeLeft > 0) {
       timeLeft--;
       updateTimer();
@@ -444,6 +446,11 @@ function startTimer() {
       showScore();
     }
   }, 1000);
+}
+
+// Function to stop the timer countdown
+function stopTimer() {
+  clearInterval(timerInterval);
 }
 
 // Function to check the user's answer
@@ -480,21 +487,34 @@ function checkAnswer() {
 // Function to display the final score
 function showScore() {
   questionContainer.style.display = "none";
+  prevButton.style.display = "none";
   nextButton.style.display = "none";
+  submitButton.style.display = "none";
   scoreContainer.textContent = `Your Total Score: ${score}/${questions.length}`;
   scoreContainer.style.display = "block";
 }
 
 // Event listener for the "Previous" button
 prevButton.addEventListener("click", () => {
-  currentQuestion--;
-  showQuestion();
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion();
+  }
 });
 
 // Event listener for the "Next" button
 nextButton.addEventListener("click", () => {
-  currentQuestion++;
-  showQuestion();
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion();
+  }
+});
+
+// Event listener for the "submit" button
+submitButton.addEventListener("click", () => {
+  checkAnswer();
+  stopTimer();
+  showScore();
 });
 
 // Start the timer and display the first question
