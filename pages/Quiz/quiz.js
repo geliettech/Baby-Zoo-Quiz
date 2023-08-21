@@ -1,3 +1,4 @@
+// Array containing question objects
 const questions = [
   // Objective questions
   {
@@ -384,14 +385,19 @@ const questions = [
     answer: "Unity and Faith, Peace and Progress",
   },
 ];
+// Initialize variables
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 600; // 10 minutes in seconds
 
+// Get elements from the HTML
 const timer = document.getElementById("timer");
 const questionContainer = document.getElementById("question-container");
+const prevButton = document.getElementById("prev-btn");
 const nextButton = document.getElementById("next-btn");
 const scoreContainer = document.getElementById("score-container");
+
+// Function to display the current question
 function showQuestion() {
   const question = questions[currentQuestion];
   questionContainer.innerHTML = `
@@ -412,8 +418,12 @@ function showQuestion() {
         : '<textarea id="subjective-answer" rows="4" cols="50" placeholder="Your answer..."></textarea>'
     }
 	`;
+  // Enable/disable navigation buttons based on question index
+  prevButton.disabled = currentQuestion === 0;
+  nextButton.disabled = currentQuestion === questions.length - 1;
 }
 
+// Function to update the timer display
 function updateTimer() {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
@@ -423,6 +433,7 @@ function updateTimer() {
   )}:${String(seconds).padStart(2, "0")}`;
 }
 
+// Function to start the timer countdown
 function startTimer() {
   const timerInterval = setInterval(() => {
     if (timeLeft > 0) {
@@ -435,6 +446,7 @@ function startTimer() {
   }, 1000);
 }
 
+// Function to check the user's answer
 function checkAnswer() {
   const question = questions[currentQuestion];
   if (question.type === "objective") {
@@ -465,13 +477,26 @@ function checkAnswer() {
   }
 }
 
+// Function to display the final score
 function showScore() {
   questionContainer.style.display = "none";
   nextButton.style.display = "none";
   scoreContainer.textContent = `Your Total Score: ${score}/${questions.length}`;
   scoreContainer.style.display = "block";
 }
-nextButton.addEventListener("click", checkAnswer);
 
-showQuestion();
+// Event listener for the "Previous" button
+prevButton.addEventListener("click", () => {
+  currentQuestion--;
+  showQuestion();
+});
+
+// Event listener for the "Next" button
+nextButton.addEventListener("click", () => {
+  currentQuestion++;
+  showQuestion();
+});
+
+// Start the timer and display the first question
 startTimer();
+showQuestion();
