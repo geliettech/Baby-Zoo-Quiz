@@ -1,107 +1,8 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  max-width: 100%;
-  height: 100vh;
-}
-main {
-  width: 100%;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.829),
-      rgba(13, 13, 13, 0.582),
-      rgba(0, 0, 0, 0.706)
-    ),
-    url("./img/question-mark-sign-glowing.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  color: #fff;
-}
-.main-container {
-  width: 96%;
-  margin: 0 auto;
-  padding: 12px 0;
-}
-.logo h1 {
-  font-weight: 600;
-  font-size: 62px;
-  color: #3498db;
-  text-align: right;
-}
-.welcomeWriteUp-btn-wrapper {
-  text-align: center;
-}
-.welcome-writeUp {
-  margin-top: 16%;
-}
-.welcome-writeUp h2 {
-  font-weight: 600;
-  font-size: 38px;
-  color: #3498db;
-}
-.welcome-writeUp p {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 1.5rem;
-  margin-top: 8px;
-}
-
-.main-container button {
-  border-radius: 4px;
-  background-color: #3498db;
-  border: none;
-  padding: 8px;
-  margin-top: 8px;
-  text-align: right;
-}
-.main-container button a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 18px;
-}
-.main-container button a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 864px) {
-  .logo h1 {
-    font-size: 38px;
-  }
-  .welcome-writeUp h2 {
-    font-size: 32px;
-  }
-  .welcome-writeUp p {
-    font-size: 20px;
-  }
-  .main-container button a {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 362px) {
-  .logo h1 {
-    font-size: 32px;
-  }
-  .welcome-writeUp h2 {
-    font-size: 28px;
-  }
-  .welcome-writeUp p {
-    font-size: 18px;
-  }
-  .main-container button a {
-    font-size: 16px;
-  }
-} */
+/* styling for home page */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #fdf5e6;
   display: flex;
   justify-content: center;
@@ -143,6 +44,7 @@ body {
 
 .start-btn:hover {
   background-color: #ff6347;
+  text-decoration: underline;
 }
 
 .instructions {
@@ -162,11 +64,7 @@ body {
   padding-left: 20px;
 }
 
-
-
-
-
-
+/* styling for quiz page */
 
 .quiz-container {
   background: #fff8dc;
@@ -199,7 +97,6 @@ body {
   background-color: #20b2aa;
   transition: width 0.3s ease;
 }
-
 
 .image-box img {
   width: 200px;
@@ -253,18 +150,7 @@ body {
   color: #333;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* styling for result page */
 
 .results-container {
   background-color: #fff8dc;
