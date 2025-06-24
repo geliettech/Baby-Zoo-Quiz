@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team-IX</title>
+    <title>Baby Zoo Quiz</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <main>
-      <div class="main-container">
+      <!-- <div class="main-container">
         <div class="logo-welcomeWriteUp-btn-wrapper">
           <div class="logo">
             <h1>TEAM IX</h1>
@@ -34,7 +34,25 @@
             </button>
           </div>
         </div>
+      </div> -->
+      <div class="home-container">
+        <h1 class="logo">🐾 Baby Zoo Quiz 🐾</h1>
+        <p class="tagline">Can you guess these baby animal names?</p>
+        <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+        <div class="instructions">
+          <h3>How to Play:</h3>
+          <ul>
+            <li>You’ll see a baby animal image or clue.</li>
+            <li>Choose the correct name from 3 options.</li>
+            <li>Score points for each correct answer!</li>
+          </ul>
+        </div>
       </div>
     </main>
+    <script>
+      function startQuiz() {
+        window.location.href = "./quiz.html"; // Or route if using React
+      }
+    </script>
   </body>
 </html>

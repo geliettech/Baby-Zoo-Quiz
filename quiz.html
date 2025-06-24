@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baby Zoo Quiz - Play</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <!-- <div class="score">Score: <span id="score">0</span></div> -->
+      <div class="score-timer-bar">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="timer">⏳ Time: <span id="time-left">10</span>s</div>
+      </div>
+
+      <div class="progress-bar">
+        <div id="progress" class="progress-fill"></div>
+      </div>
+
+      <div class="image-box">
+        <img id="animal-image" src="baby-kangaroo.jpg" alt="Baby animal" />
+      </div>
+
+      <div class="question" id="question">What is a baby kangaroo called?</div>
+
+      <div class="options">
+        <button class="option-btn">Pup</button>
+        <button class="option-btn">Joey</button>
+        <button class="option-btn">Cub</button>
+        <button class="option-btn">Fawn</button>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="prevBtn">Previous</button>
+        <button id="submitBtn">Submit</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+
+    <script src="./quiz.js"></script>
+  </body>
+</html>
