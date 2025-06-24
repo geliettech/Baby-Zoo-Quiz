@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baby Zoo Quiz - Play</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="quiz-container">
       <!-- <div class="score">Score: <span id="score">0</span></div> -->
       <div class="score-timer-bar">
         <div class="score">Score: <span id="score">0</span></div>
-        <div class="timer">⏳ Time: <span id="time-left">10</span>s</div>
+        <div class="timer">⏳ Time: <span id="time-left">600</span>s</div>
       </div>
 
       <div class="progress-bar">
-        <div id="progress" class="progress-fill"></div>
+        <div id="progress" class="progress-fill">
+          <div class="currentQuestion">
+            <span id="currentQuestion-left">1</span>/50
+          </div>
+        </div>
       </div>
 
       <div class="image-box">
@@ -33,8 +37,8 @@
 
       <div class="nav-buttons">
         <button id="prevBtn">Previous</button>
-        <button id="submitBtn">Submit</button>
         <button id="nextBtn">Next</button>
+        <button id="submitBtn">Submit</button>
       </div>
     </div>
 
