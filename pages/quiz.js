@@ -1,25 +1,5 @@
-const questions = [
-  {
-    image: "baby-elephant.jpg",
-    question: "What is a baby elephant called?",
-    options: ["Foal", "Calf", "Cub", "Chick"],
-    answer: "Calf",
-  },
-  {
-    image: "baby-kangaroo.jpg",
-    question: "What is a baby kangaroo called?",
-    options: ["Pup", "Joey", "Cub", "Fawn"],
-    answer: "Joey",
-  },
-  {
-    image: "baby-elephant.jpg",
-    question: "What is a baby elephant called?",
-    options: ["Foal", "Calf", "Cub", "Chick"],
-    answer: "Calf",
-  },
-  // Add more...
-];
 
+import { questions } from './questions.js';
 
 const questionText = document.getElementById("question");
 const scoreDisplay = document.getElementById("score");
@@ -35,15 +15,14 @@ const submitButton = document.getElementById("submitBtn");
 let score = 0;
 let currentQuestion = 0;
 let timer;
-let totalTimeLeftime = 600; // 10 minutes in seconds
+let totalTimeLeft = 600;
 let totalTime = 0;
 let totalTimer;
+let answeredQuestions = Array(questions.length).fill(false);
 
-
-// Function to display the current question
 function loadQuestion(index) {
   clearInterval(timer);
-  timeLeftEl.textContent = totalTimeLeftime;
+  timeLeftEl.textContent = totalTimeLeft;
   startQuestionTimer();
 
   const q = questions[index];
@@ -52,33 +31,66 @@ function loadQuestion(index) {
 
   options.forEach((btn, i) => {
     btn.textContent = q.options[i];
-    btn.onclick = () => handleAnswer(btn.textContent === q.answer);
+
+    // ✅ Reset styles
+    btn.style.backgroundColor = "";
+    btn.style.color = "";
+    btn.style.cursor = "pointer";
+    btn.style.opacity = "1";
+    btn.disabled = false;
+
+    // ✅ Attach new click handler
+    btn.onclick = () => handleAnswer(btn, q.options[i] === q.answer);
   });
 
   updateProgress();
 }
 
+
 function startQuestionTimer() {
   timer = setInterval(() => {
-    totalTimeLeftime--;
-    timeLeftEl.textContent = totalTimeLeftime;
-    if (totalTimeLeftime <= 0) {
+    totalTimeLeft--;
+    timeLeftEl.textContent = totalTimeLeft;
+    if (totalTimeLeft <= 0) {
       clearInterval(timer);
       submitQuestions();
     }
   }, 1000);
 }
 
+function handleAnswer(button, isCorrect) {
+  if (!answeredQuestions[currentQuestion]) {
+    if (isCorrect) {
+      score++;
+      scoreDisplay.textContent = score;
+      button.style.backgroundColor = "green";
+      button.style.color = "white";
+    } else {
+      button.style.backgroundColor = "red";
+      button.style.color = "white";
 
-function handleAnswer(isCorrect) {
-  if (isCorrect) {
-    score++;
-    scoreDisplay.textContent = score;
+      // Also highlight the correct answer in green
+      options.forEach((btn) => {
+        if (btn.textContent === questions[currentQuestion].answer) {
+          btn.style.backgroundColor = "green";
+          btn.style.color = "white";
+        }
+      });
+    }
+
+    answeredQuestions[currentQuestion] = true;
+
+    // Disable all buttons and prevent further answers
+    options.forEach((btn) => {
+      btn.disabled = true;
+      btn.style.cursor = "not-allowed";
+      btn.style.opacity = "0.7";
+    });
+
+    clearInterval(timer);
+    setTimeout(() => nextQuestion(), 1000); // Move to next after 1s
   }
-  clearInterval(timer);
-  setTimeout(() => nextQuestion(), 500); // Delay before auto-next
 }
-
 
 
 function updateProgress() {
@@ -93,8 +105,6 @@ function startTotalTimer() {
   }, 1000);
 }
 
-
-// Event listener for the "Previous" button
 prevButton.addEventListener("click", () => {
   if (currentQuestion > 0) {
     currentQuestion--;
@@ -102,30 +112,22 @@ prevButton.addEventListener("click", () => {
   }
 });
 
-
-// Event listener for the "Next" button
 nextButton.addEventListener("click", () => {
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
     loadQuestion(currentQuestion);
-  } 
-  // else {
-  //       localStorage.setItem("babyZooScore", score);
-  //       localStorage.setItem("totalTime", totalTime);
-  //     }
+  }
 });
-
-
-
-
 
 function submitQuestions() {
   clearInterval(totalTimer);
+  clearInterval(timer);
   localStorage.setItem("babyZooScore", score);
   localStorage.setItem("totalTime", totalTime);
   window.location.href = "./results.html";
 }
-submitButton.onclick = submitQuestions
+
+submitButton.onclick = submitQuestions;
 
 window.onload = () => {
   scoreDisplay.textContent = score;
