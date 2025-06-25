@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* styling for home page */
+/* give the body element of the three(home, quiz, results) pages default styling */
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: #fdf5e6;
@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
 }
-
+/* styling for the home page */
 .home-container {
   text-align: center;
   background-color: #fff8dc;
