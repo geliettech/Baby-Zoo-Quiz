@@ -1,7 +1,11 @@
-/* styling for home page */
-body {
+/* reset the default styling */
+*, html{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+/* styling for home page */
+body {
   font-family: "Segoe UI", sans-serif;
   background-color: #fdf5e6;
   display: flex;
@@ -63,6 +67,10 @@ body {
   list-style-type: disc;
   padding-left: 20px;
 }
+
+
+
+
 
 /* styling for quiz page */
 
@@ -149,6 +157,9 @@ body {
   margin-bottom: 10px;
   color: #333;
 }
+
+
+
 
 /* styling for result page */
 

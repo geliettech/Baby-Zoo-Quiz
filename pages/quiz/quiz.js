@@ -1,5 +1,5 @@
 
-import { questions } from './questions.js';
+import { questions } from '../questions.js';
 
 const questionText = document.getElementById("question");
 const scoreDisplay = document.getElementById("score");
@@ -124,7 +124,7 @@ function submitQuestions() {
   clearInterval(timer);
   localStorage.setItem("babyZooScore", score);
   localStorage.setItem("totalTime", totalTime);
-  window.location.href = "./results.html";
+  window.location.href = "../results/results.html";
 }
 
 submitButton.onclick = submitQuestions;

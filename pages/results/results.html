@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Zoo Quiz - Results</title>
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="results-container">
+    <h1>🎉 Quiz Complete! 🎉</h1>
+    <p>Your Score:</p>
+    <h2 id="final-score">0</h2>
+    <p id="message" class="encouragement"></p>
+    <p>Total Time: <span id="total-time"></span> seconds</p>
+
+    <button onclick="playAgain()" class="btn">Play Again</button>
+    <button onclick="shareScore()" class="btn share-btn">Share</button>
+  </div>
+  
+  <script src="./results.js"></script>
+</body>
+</html>

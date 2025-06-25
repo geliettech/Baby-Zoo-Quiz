@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Zoo Quiz - Results</title>
-  <link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-  <div class="results-container">
-    <h1>🎉 Quiz Complete! 🎉</h1>
-    <p>Your Score:</p>
-    <h2 id="final-score">0</h2>
-    <p id="message" class="encouragement"></p>
-    <p>Total Time: <span id="total-time"></span> seconds</p>
-
-    <button onclick="playAgain()" class="btn">Play Again</button>
-    <button onclick="shareScore()" class="btn share-btn">Share</button>
-  </div>
-
-  <script>
     // Assume score was stored in localStorage
     const score = localStorage.getItem("babyZooScore") || 0;
     const finalScore = document.getElementById("final-score");
@@ -39,7 +18,7 @@
 
     function playAgain() {
       localStorage.setItem("babyZooScore", 0);
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
     }
 
     function shareScore() {
@@ -62,7 +41,3 @@
 
     const totalTime = localStorage.getItem("totalTime") || 0;
 document.getElementById("total-time").textContent = totalTime;
-
-  </script>
-</body>
-</html>
