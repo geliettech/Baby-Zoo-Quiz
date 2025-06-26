@@ -155,20 +155,34 @@ body {
 }
 
 .option-btn:hover {
-  background-color: #ec9704;
+  background-color: #c17a01;
 }
 
 /* Navigation buttons (e.g., next/prev) */
+.nav-buttons{
+  display: flex;
+  justify-content: space-between;
+}
 .nav-buttons button {
-  background-color: #20b2aa;
   color: white;
   border: none;
   padding: 10px 16px;
-  margin: 10px 5px;
   border-radius: 8px;
   cursor: pointer;
 }
 
+.nav-buttons #prevBtn {
+  background-color: #6c757d;
+}
+.nav-buttons #nextBtn {
+  background-color: #20b2aa;
+}
+.nav-buttons #submitBtn {
+  background-color: #4caf50;
+}
+.nav-buttons button:hover {
+  text-decoration: underline;
+}
 /* Score alignment */
 .score {
   text-align: right;
@@ -201,20 +215,20 @@ body {
   color: #20b2aa;
 }
 
-/* Encouraging message text */
-.encouragement {
+/* all P tags style */
+.results-container p {
   font-size: 1.2rem;
   margin-top: 10px;
   color: #333;
 }
 
 /* Generic button style */
-.btn {
+.results-container .btn {
   background-color: #ff7f50;
   color: white;
   padding: 12px 24px;
   font-size: 1rem;
-  margin: 10px;
+  margin: 18px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -222,8 +236,9 @@ body {
 }
 
 /* Hover effect for buttons */
-.btn:hover {
+.results-container .btn:hover {
   background-color: #ff6347;
+  text-decoration: underline;
 }
 
 /* Share button specific style */

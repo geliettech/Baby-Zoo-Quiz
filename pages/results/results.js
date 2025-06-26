@@ -1,3 +1,4 @@
+const playButton = document.querySelector(".btn")
 // Retrieve the user's score from localStorage, defaulting to 0 if not found
 const score = localStorage.getItem("babyZooScore") || 0;
 
@@ -25,25 +26,7 @@ function playAgain() {
   window.location.href = "../../index.html"; // Redirect to home
 }
 
-// Function to share score using the Web Share API (if supported)
-function shareScore() {
-  const shareText = `I scored ${score} on Baby Zoo Quiz! 🐾 Try it yourself!`;
-
-  if (navigator.share) {
-    // Use native share functionality on supported devices
-    navigator
-      .share({
-        title: "Baby Zoo Quiz",
-        text: shareText,
-        url: window.location.origin,
-      })
-      .then(() => console.log("Shared successfully"))
-      .catch(err => console.error("Share failed:", err));
-  } else {
-    // Fallback for unsupported browsers
-    alert("Copy and share manually:\n\n" + shareText);
-  }
-}
+playButton.addEventListener("click", playAgain)
 
 // Retrieve and display the total time spent on the quiz
 const totalTime = localStorage.getItem("totalTime") || 0;

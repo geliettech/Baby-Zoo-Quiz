@@ -1,5 +1,5 @@
 // Import the list of quiz questions
-import { questions } from '../questions.js';
+import { questions } from "../questions.js";
 
 // Select DOM elements for interaction and updates
 const questionText = document.getElementById("question");
@@ -76,17 +76,17 @@ function handleAnswer(button, isCorrect) {
     if (isCorrect) {
       score++;
       scoreDisplay.textContent = score;
-      button.style.backgroundColor = "green";
-      button.style.color = "white";
+      button.style.backgroundColor = "#4caf50";
+      button.style.color = "#ffffff";
     } else {
-      button.style.backgroundColor = "red";
-      button.style.color = "white";
+      button.style.backgroundColor = "#ff0000";
+      button.style.color = "#ffffff";
 
       // Highlight the correct answer
       options.forEach((btn) => {
         if (btn.textContent === questions[currentQuestion].answer) {
-          btn.style.backgroundColor = "green";
-          btn.style.color = "white";
+          btn.style.backgroundColor = "#4caf50";
+          btn.style.color = "#ffffff";
         }
       });
     }

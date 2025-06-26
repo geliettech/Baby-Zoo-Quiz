@@ -18,21 +18,18 @@
     <h1>🎉 Quiz Complete! 🎉</h1>
 
     <!-- Display user's score -->
-    <p>Your Score:</p>
+    <p class="result-score">Your Score:</p>
     <h2 id="final-score">0</h2>
 
     <!-- Dynamic message based on score performance -->
-    <p id="message" class="encouragement"></p>
+    <p id="message" class="encouragement">Loading...</p>
 
     <!-- Display total time spent on the quiz -->
-    <p>Total Time: <span id="total-time"></span> seconds</p>
+    <p>Total Time: <span id="total-time">Loading...</span> seconds</p>
 
     <!-- Button to restart the quiz -->
-    <button onclick="playAgain()" class="btn">Play Again</button>
-
-    <!-- Button to share score (e.g., via social media) -->
-    <button onclick="shareScore()" class="btn share-btn">Share</button>
-  </div>
+   <button class="btn">Play Again</button>
+   </div>
   
   <!-- Script file for handling result logic and interactions -->
   <script src="./results.js"></script>
