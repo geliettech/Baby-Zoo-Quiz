@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for character encoding and responsive layout -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Page title shown in the browser tab -->
   <title>Baby Zoo Quiz - Results</title>
+
+  <!-- Link to external stylesheet for consistent styling -->
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
+  <!-- Container for displaying the final quiz results -->
   <div class="results-container">
+    <!-- Main heading for completion feedback -->
     <h1>🎉 Quiz Complete! 🎉</h1>
+
+    <!-- Display user's score -->
     <p>Your Score:</p>
     <h2 id="final-score">0</h2>
+
+    <!-- Dynamic message based on score performance -->
     <p id="message" class="encouragement"></p>
+
+    <!-- Display total time spent on the quiz -->
     <p>Total Time: <span id="total-time"></span> seconds</p>
 
+    <!-- Button to restart the quiz -->
     <button onclick="playAgain()" class="btn">Play Again</button>
+
+    <!-- Button to share score (e.g., via social media) -->
     <button onclick="shareScore()" class="btn share-btn">Share</button>
   </div>
   
+  <!-- Script file for handling result logic and interactions -->
   <script src="./results.js"></script>
 </body>
 </html>

@@ -1,7 +1,11 @@
+// Select the Start Quiz button from the DOM
 let StartBtn = document.querySelector(".start-btn");
 
-      
+// Function to handle starting the quiz
 function startQuiz() {
-  window.location.href = "./pages/quiz/quiz.html"; // route or Navigate to quiz page
+  // Redirect the user to the quiz page
+  window.location.href = "./pages/quiz/quiz.html";
 }
-StartBtn.addEventListener('click',startQuiz)
+
+// Attach click event listener to the Start button
+StartBtn.addEventListener('click', startQuiz);

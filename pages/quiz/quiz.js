@@ -1,6 +1,7 @@
-
+// Import the list of quiz questions
 import { questions } from '../questions.js';
 
+// Select DOM elements for interaction and updates
 const questionText = document.getElementById("question");
 const scoreDisplay = document.getElementById("score");
 const currentQuestionLeft = document.getElementById("currentQuestion-left");
@@ -12,53 +13,65 @@ const prevButton = document.getElementById("prevBtn");
 const nextButton = document.getElementById("nextBtn");
 const submitButton = document.getElementById("submitBtn");
 
+// Initialize quiz state variables
 let score = 0;
 let currentQuestion = 0;
-let timer;
-let totalTimeLeft = 600;
-let totalTime = 0;
-let totalTimer;
-let answeredQuestions = Array(questions.length).fill(false);
+let timer; // Per-question timer
+let totalTimeLeft = 600; // Total quiz time in seconds
+let totalTime = 0; // Tracks elapsed time
+let totalTimer; // Timer for tracking total time spent
+let answeredQuestions = Array(questions.length).fill(false); // Track if each question has been answered
 
+/**
+ * Loads the question at the given index and updates UI accordingly
+ */
 function loadQuestion(index) {
-  clearInterval(timer);
-  timeLeftEl.textContent = totalTimeLeft;
-  startQuestionTimer();
+  clearInterval(timer); // Reset previous question timer
+  timeLeftEl.textContent = totalTimeLeft; // Reset time display
+  startQuestionTimer(); // Start timer for current question
 
   const q = questions[index];
   imageEl.src = q.image;
   questionText.textContent = q.question;
 
+  // Populate and reset all answer buttons
   options.forEach((btn, i) => {
     btn.textContent = q.options[i];
 
-    // ✅ Reset styles
+    // Reset button styles and states
     btn.style.backgroundColor = "";
     btn.style.color = "";
     btn.style.cursor = "pointer";
     btn.style.opacity = "1";
     btn.disabled = false;
 
-    // ✅ Attach new click handler
+    // Attach click handler to evaluate answer
     btn.onclick = () => handleAnswer(btn, q.options[i] === q.answer);
   });
 
   updateProgress();
 }
 
-
+/**
+ * Starts countdown timer for each question
+ */
 function startQuestionTimer() {
   timer = setInterval(() => {
     totalTimeLeft--;
     timeLeftEl.textContent = totalTimeLeft;
+
     if (totalTimeLeft <= 0) {
       clearInterval(timer);
-      submitQuestions();
+      submitQuestions(); // Auto-submit if time runs out
     }
   }, 1000);
 }
 
+/**
+ * Handles logic when a user selects an answer
+ */
 function handleAnswer(button, isCorrect) {
+  // Prevent multiple answers for the same question
   if (!answeredQuestions[currentQuestion]) {
     if (isCorrect) {
       score++;
@@ -69,7 +82,7 @@ function handleAnswer(button, isCorrect) {
       button.style.backgroundColor = "red";
       button.style.color = "white";
 
-      // Also highlight the correct answer in green
+      // Highlight the correct answer
       options.forEach((btn) => {
         if (btn.textContent === questions[currentQuestion].answer) {
           btn.style.backgroundColor = "green";
@@ -78,33 +91,40 @@ function handleAnswer(button, isCorrect) {
       });
     }
 
+    // Mark question as answered and disable all options
     answeredQuestions[currentQuestion] = true;
-
-    // Disable all buttons and prevent further answers
     options.forEach((btn) => {
       btn.disabled = true;
       btn.style.cursor = "not-allowed";
       btn.style.opacity = "0.7";
     });
 
-    clearInterval(timer);
-    setTimeout(() => nextQuestion(), 1000); // Move to next after 1s
+    clearInterval(timer); // Stop the timer for this question
+
+    // Automatically move to the next question after a short delay
+    setTimeout(() => nextQuestion(), 1000);
   }
 }
 
-
+/**
+ * Updates progress bar and current question indicator
+ */
 function updateProgress() {
   const percent = ((currentQuestion + 1) / questions.length) * 100;
   progressFill.style.width = percent + "%";
   currentQuestionLeft.textContent = currentQuestion + 1;
 }
 
+/**
+ * Tracks total time taken from start of quiz
+ */
 function startTotalTimer() {
   totalTimer = setInterval(() => {
     totalTime++;
   }, 1000);
 }
 
+// Navigate to the previous question
 prevButton.addEventListener("click", () => {
   if (currentQuestion > 0) {
     currentQuestion--;
@@ -112,6 +132,7 @@ prevButton.addEventListener("click", () => {
   }
 });
 
+// Navigate to the next question
 nextButton.addEventListener("click", () => {
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
@@ -119,16 +140,27 @@ nextButton.addEventListener("click", () => {
   }
 });
 
+/**
+ * Handles quiz submission and redirects to results page
+ */
 function submitQuestions() {
   clearInterval(totalTimer);
   clearInterval(timer);
+
+  // Save score and time to localStorage for results display
   localStorage.setItem("babyZooScore", score);
   localStorage.setItem("totalTime", totalTime);
+
+  // Redirect to results page
   window.location.href = "../results/results.html";
 }
 
+// Submit button handler
 submitButton.onclick = submitQuestions;
 
+/**
+ * Initializes the quiz on page load
+ */
 window.onload = () => {
   scoreDisplay.textContent = score;
   loadQuestion(currentQuestion);

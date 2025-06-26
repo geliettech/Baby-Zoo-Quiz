@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata and responsive settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title -->
     <title>Baby Zoo Quiz - Play</title>
+
+    <!-- Link to shared/global stylesheet -->
     <link rel="stylesheet" href="../../styles.css" />
   </head>
+
   <body>
+    <!-- Main container for the quiz content -->
     <div class="quiz-container">
+
+      <!-- Score and timer display bar -->
       <div class="score-timer-bar">
         <div class="score">Score: <span id="score">0</span></div>
         <div class="timer">⏳ Time: <span id="time-left">600</span>s</div>
       </div>
 
+      <!-- Progress bar with current question indicator -->
       <div class="progress-bar">
         <div id="progress" class="progress-fill">
           <div class="currentQuestion">
@@ -21,12 +31,15 @@
         </div>
       </div>
 
+      <!-- Display area for the baby animal image -->
       <div class="image-box">
         <img id="animal-image" src="baby-kangaroo.jpg" alt="Baby animal" />
       </div>
 
+      <!-- Question prompt -->
       <div class="question" id="question">Loading...</div>
 
+      <!-- Multiple-choice answer options -->
       <div class="options">
         <button class="option-btn"></button>
         <button class="option-btn"></button>
@@ -34,12 +47,15 @@
         <button class="option-btn"></button>
       </div>
 
+      <!-- Navigation buttons for moving between questions -->
       <div class="nav-buttons">
         <button id="prevBtn">Previous</button>
         <button id="nextBtn">Next</button>
         <button id="submitBtn">Submit</button>
       </div>
     </div>
+
+    <!-- Link to the quiz logic JavaScript file (using module syntax) -->
     <script type="module" src="./quiz.js"></script>
   </body>
 </html>
